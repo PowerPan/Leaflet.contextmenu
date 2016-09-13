@@ -16,8 +16,5 @@
     "**/.*",
     "src",
     "examples"
-  ],
-  "dependencies": {
-      "leaflet": "0.7.x"
-  }
+  ]
 }
