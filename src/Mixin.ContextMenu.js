@@ -38,7 +38,7 @@ L.Mixin.ContextMenu = {
 
 	_initContextMenu: function () {
 		this._items = [];
-	
+
 		this.on('contextmenu', this._showContextMenu, this);
 	},
 
@@ -47,8 +47,8 @@ L.Mixin.ContextMenu = {
 		    data, pt, i, l;
 
 		if (this._map.contextmenu) {
-            data = L.extend({relatedTarget: this}, e)
-            
+            data = L.extend({relatedTarget: this}, e);
+
 			pt = this._map.mouseEventToContainerPoint(e.originalEvent);
 
 			if (!this.options.contextmenuInheritItems) {
@@ -61,7 +61,7 @@ L.Mixin.ContextMenu = {
 			}
 
 			this._map.once('contextmenu.hide', this._hideContextMenu, this);
-		
+
 			this._map.contextmenu.showAt(pt, data);
 		}
 	},
@@ -72,12 +72,12 @@ L.Mixin.ContextMenu = {
 		for (i = 0, l = this._items.length; i < l; i++) {
 			this._map.contextmenu.removeItem(this._items[i]);
 		}
-		this._items.length = 0;		
+		this._items.length = 0;
 
 		if (!this.options.contextmenuInheritItems) {
 			this._map.contextmenu.showAllItems();
 		}
-	}	
+	}
 };
 
 var classes = [L.Marker, L.Path],
